@@ -1,4 +1,4 @@
-package org.example;
+package org.codePractices;
 
 import java.util.Scanner;
 
