@@ -27,7 +27,6 @@ import java.util.Arrays;
                 j++;
             }
 
-            // Copy first k elements to end
             for (int i = 0; i < k; i++) {
                 temp[j] = arr[i];
                 j++;
