@@ -1,37 +1,21 @@
-# Code Practice
+# HashMap Questions
 
-Per-assignment Java structure. Each assignment has its own `Main` class.
+## Completed
+- [x] Find frequency of numbers
+- [x] Find least frequency number
+- [x] Find sum of two numbers in array
+- [x] Find most frequent number
+- [x] First non-repeating number
+- [x] First non-repeating character
+- [x] Two Sum
 
-## Project structure
-
-```text
-.
-├── src
-│   └── secondlargest
-│       └── Main.java
-├── scripts
-│   └── run.sh
-└── out
-```
-
-## Run an assignment
-
-```bash
-./scripts/run.sh secondlargest
-```
-
-Expected output:
-
-```text
-Second largest number: 90
-```
-
-## Add a new assignment
-
-1. Create a folder in `src/<assignmentname>/`.
-2. Add `Main.java` with package `<assignmentname>`.
-3. Run:
-
-```bash
-./scripts/run.sh <assignmentname>
-```
+## Pending
+- [ ] Check duplicate in array
+- [ ] Find all duplicate numbers
+- [ ] Intersection of two arrays
+- [ ] Valid anagram
+- [ ] Group anagrams
+- [ ] Top K frequent elements
+- [ ] Longest substring without repeating characters
+- [ ] Subarray sum equals K
+- [ ] Longest consecutive sequence
