@@ -1,4 +1,4 @@
-package secondlargest;
+package
 
 public final class Main {
     private Main() {
