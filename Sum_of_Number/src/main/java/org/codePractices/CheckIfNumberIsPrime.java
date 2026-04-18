@@ -19,6 +19,7 @@ public class CheckIfNumberIsPrime {
                     return false; // n is divisible by a number other than 1 and itself
                 }
             }
+
             return true; // n is a prime number
 
         }
