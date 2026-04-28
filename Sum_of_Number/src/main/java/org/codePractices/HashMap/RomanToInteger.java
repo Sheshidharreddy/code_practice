@@ -28,7 +28,7 @@ public class RomanToInteger {
         int result = 0;
 
         for(int i = 0 ; i < n; i++) {
-            if (i < n - 1 && map.get(str.charAt(i)) < map.get(str.charAt(i + 1))) {
+            if (i < n - 1 && map.get(str.charAt(i))  < map.get(str.charAt(i + 1))) {
                 result = result - map.get(str.charAt(i));
             } else {
                 result = result + map.get(str.charAt(i));
