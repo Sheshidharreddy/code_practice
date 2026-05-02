@@ -16,6 +16,13 @@ public class Anagram {
         char[] arr1 = str1.toCharArray();
         char[] arr2 = str2.toCharArray();
 
+        Anagram newMethod = new Anagram();
+       boolean result =  newMethod.anagramFastWay(str1,str2);
+
+       System.out.println("Give word are Anagram :" + result );
+
+       System.out.println("**************************************************************************************");
+
         System.out.println("Printing the characters of the first string: "+ Arrays.toString(arr1));
 
         if(arr1.length==arr2.length){
@@ -30,5 +37,25 @@ public class Anagram {
         }else{
             System.out.println("The strings are not anagrams");
         }
+    }
+
+    public boolean anagramFastWay(String s, String t){
+
+        if (s.length() != t.length()) {
+            return false;
+        }
+        int [] count = new int[26];
+
+        for(int i = 0; i < s.length(); i++){
+            count[s.charAt(i) - 'a']++;
+            count[t.charAt(i) - 'a']--;
+        }
+
+        for (int c : count){
+            if(c != 0){
+                return false;
+            }
+        }
+        return true;
     }
 }
