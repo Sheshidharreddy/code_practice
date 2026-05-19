@@ -17,7 +17,7 @@ public class RemoveSpaceReversetheSentence {
         //step 1: reverse the entire string
        reverseSetence(ch,0,ch.length -1);
        // Step 2 : reverse each words
-        reverseEachWors(ch);
+        reverseEachWord(ch);
         // Step 3 : clean space
         return cleanSpace(ch);
     }
@@ -44,7 +44,7 @@ public class RemoveSpaceReversetheSentence {
 
     }
 
-    private void reverseEachWors(char[] str){
+    private void reverseEachWord(char[] str){
         int left = 0 ;
         int right = 0;
 
