@@ -5,7 +5,7 @@ public class isPalindrome {
     public static void main(String[] args){
 
         isPalindrome s = new isPalindrome();
-        String str = "sam ma";
+        String str = "sam mas";
 
         System.out.println("result: " + s.checkTheStatus(str));
 
