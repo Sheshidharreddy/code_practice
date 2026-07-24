@@ -1,6 +1,5 @@
 package org.codePractices.stack;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Stack;
 
@@ -9,7 +8,7 @@ public class AsteroIdCollision {
     public static void main(String[] args){
 
         AsteroIdCollision s = new AsteroIdCollision();
-        int[] sq = {-1,2,3,-4};
+        int[] sq = {-1,2,3,-4,9,6,-1,-8};
      System.out.println("Result :"+ Arrays.toString(s.asteroID(sq)));   ;
 
     }
