@@ -7,7 +7,7 @@ public class LargestValidParentheses {
     public static void main(String[] args){
 
         LargestValidParentheses st = new LargestValidParentheses();
-        String str = "(()))";
+        String str = "((()(()))";
         System.out.println("Result of valid parenthesis " + st.vaildParenthese(str));
 
     }
@@ -22,6 +22,7 @@ public class LargestValidParentheses {
             if(ch == '('){
                 stack.push(i);
             }else{
+                stack.pop();
                 if(stack.isEmpty()){
                     stack.push(i);
                 } else{
