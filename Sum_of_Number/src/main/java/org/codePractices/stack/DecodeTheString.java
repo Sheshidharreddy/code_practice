@@ -19,26 +19,25 @@ public class DecodeTheString {
         int len = s.length();
         for(int i = 0; i < len; i++){
             char ch = s.charAt(i);
-            if(Character.isDigit(ch)){
+            if(Character.isDigit(ch)) {
                 int num = ch - '0';
-                while(i + 1 < len && Character.isDigit(s.charAt(i + 1))){
+                while (i + 1 < len && Character.isDigit(s.charAt(i + 1))) {
                     num = num * 10 + s.charAt(i + 1) - '0';
                     i++;
                 }
-                if(ch == '['){
-                    strStack.push(sb.toString());
-                    sb = new StringBuilder();
-                }
-                if(ch == ']'){
-                    int k = numStack.pop();
-                    StringBuilder temp = new StringBuilder(strStack.pop());
+                numStack.push(num);
+            }else if(ch == '['){
+                strStack.push(sb.toString());
+                sb = new StringBuilder();
+            }else if(ch == ']') {
+                int k = numStack.pop();
+                StringBuilder temp = new StringBuilder(strStack.pop());
                     for(int j = 0; j < k ; j++){
                         temp.append(sb);
                     }
-
                     sb = temp;
-                }
-            }else{
+            }
+            else{
                 sb.append(ch);
             }
         }
