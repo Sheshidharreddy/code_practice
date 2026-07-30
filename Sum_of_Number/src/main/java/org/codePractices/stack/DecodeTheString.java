@@ -7,7 +7,7 @@ public class DecodeTheString {
     public static void main(String[] args){
 
         DecodeTheString s = new DecodeTheString();
-        System.out.println("Result :" +s.decodeResult("3[2[a]c]"));
+        System.out.println("Result :" +s.decodeResult("3[2[ab]c]"));
 
     }
 
