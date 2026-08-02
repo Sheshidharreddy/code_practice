@@ -7,7 +7,7 @@ public class FindTheLargestRectangleArea {
     public static void main(String[] args) {
 
         FindTheLargestRectangleArea s = new FindTheLargestRectangleArea();
-        int[] heights = {2, 1, 5, 6, 2, 3};
+        int[] heights = {2, 1, 5, 6, 2, 11, 12, 15, 90, 3};
         int result = s.largestRectangleArea(heights);
         System.out.println("result " + result);
 
