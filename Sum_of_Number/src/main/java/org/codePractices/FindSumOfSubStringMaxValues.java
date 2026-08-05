@@ -5,7 +5,7 @@ public class FindSumOfSubStringMaxValues {
     public static void main(String[] args){
 
         FindSumOfSubStringMaxValues s = new FindSumOfSubStringMaxValues();
-        int[] nums = {-2,1,-3, 4,-1, 2, 1, -5, 4};
+        int[] nums = {-2,1,-2,1,2,3,4};
         System.out.println("Results: " +s.maxValuesSubArray(nums));
 
     }
