@@ -5,7 +5,7 @@ public class FindTheMajorityOfTheAraay {
     public static void main(String[] args){
 
         FindTheMajorityOfTheAraay s = new FindTheMajorityOfTheAraay();
-        int [] n = {1,2,3,4,4,3,2,2,2,2,2};
+        int [] n = {1,2,3,4,4,3,2,2,2,2,2,22};
         System.out.println("Result :" + s.findTheMajorityValues(n));
     }
 
