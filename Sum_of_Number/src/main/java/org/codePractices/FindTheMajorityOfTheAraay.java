@@ -5,20 +5,21 @@ public class FindTheMajorityOfTheAraay {
     public static void main(String[] args){
 
         FindTheMajorityOfTheAraay s = new FindTheMajorityOfTheAraay();
-        int [] n = {2,3,4,2,2,3,3,3,6,6,6,6,6,6,6,6};
+        int [] n = {1,2,3,4,4,3,2,2,2,2,2};
         System.out.println("Result :" + s.findTheMajorityValues(n));
     }
 
     public int findTheMajorityValues(int nums[]){
-        int count = 1;
-        int candidate = nums[0];
+        int count = 0;
+        int candidate = 0;
 
-        for(int i = 1 ; i < nums.length; i++){
-            if(candidate == nums[i]){
-                count++;
-            } else if (candidate!=count){
-                count--;
+        for(int i = 0 ; i < nums.length; i++){
+            if(count == 0){
                 candidate = nums[i];
+            }else if (candidate == nums[i]){
+                count++;
+            } else {
+                count --;
             }
         }
 
