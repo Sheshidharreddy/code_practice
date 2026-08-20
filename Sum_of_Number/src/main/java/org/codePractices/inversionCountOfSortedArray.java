@@ -5,16 +5,17 @@ public class inversionCountOfSortedArray {
     public static void main(String[] args){
 
         inversionCountOfSortedArray s = new inversionCountOfSortedArray();
-        long[] t = {1,2,4,3,5};
+        long[] t = {5,4,3,2,1};
 
-       System.out.println(s.inversionCount(s.inversionCount(t)));
+        System.out.println(s.inversionCount(t));
+
 
     }
 
-    public long[] inversionCount(long [] nums){
+    public long inversionCount(long [] nums){
         int l = 0;
         int r = nums.length - 1;
-       return new long[]{mergeSort(nums, l, r)};
+       return mergeSort(nums, l, r);
 
     }
 
@@ -23,9 +24,9 @@ public class inversionCountOfSortedArray {
         long count = 0;
         if (l < r) {
             int mid = l + (r - l) / 2;
-            count += mergeSort(nums, l, mid + 1);
+            count += mergeSort(nums, l, mid );
             count += mergeSort(nums, mid + 1, r);
-            count = merge(nums, l, mid, r);
+            count += merge(nums, l, mid, r);
         }
         return count;
     }
