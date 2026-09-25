@@ -1,0 +1,151 @@
+JDK: Java development kit
+JDK provides development tools along with JRE.
+JVM: Java Virtual Machine executes Java bytecode., Platform dependent
+JRE : Contains JVM + Libraries required to run java application.
+
+What is difference betweeb JDK, JRE, JVM
+
+JVM executes the java program , JRE provide the runtime environment, and JDK provide development tool along with JRE
+
+
+2.
+What are the main OOP concepts?
+Encapsulation :
+Encapsulation mean wrapping data(variables) and method (functions) into a single unit (class) and restricting direct access to data.
+Benefits:
+-	Data Security
+-	Better control over data
+-	Easy maintenance
+Interview Answer:
+Encapsulation is the process of hiding data using private variable and Providing controlled access through getter and setter methods
+Inheritence :
+Inheritance allow one class to acquire properties and behavior of another class.
+Benefits;
+-	Code reusability
+-	Reduces Duplication
+-	Easier maintenance
+Interview Answer:
+Inheritance allow a child class to inherit the properties and methods from a parent class using the extends keyword.
+Pholymorphism :
+Polymorphism mean one interface any many forms.
+Two of Polymorphism:
+Method Overloading(compile Time ):
+Run-Time Polymorphism (Method Overriding):
+Interview Answer:
+Polymorphism allow the same method or interface to behave differently based on the object calling it.
+Abstraction :
+Abstraction: mean showing only essential details and hiding implementation details:
+Interview Answers:
+Abstraction hides implementation details and exposes only the required functionalities through abstract class or interface.
+
+3. Difference between == and equals()?
+
+== Operator
+-	Compare memory reference objects;
+-	Compares actual values for primitive data type.
+Equals() Method:
+-	Compares the content/value of Object.
+-	Defined in the Object class and can be overridden.
+Therefore:
+The == operator compares reference for objects and values for primitive types, whereas equals() compares the logical content of objects. For Example two string objects containing the same text may return in memory, but equals() return true because it compares the actual string content.
+What are the java primitive data types:
+Primitive data types in java are built-in data type that stores a simple value directly, not an object.
+Example:
+Byte age = 25
+Short 2 bytes short num = 1000;
+Int, 4 bytes, int count = 100
+Char , 2  bytes , char gard = ‘A’
+Boolean, JVM dependent, Boolean isVaild = ture
+4. Why String is immutable?
+Immutable = Cannot be changed after creation.
+Instead, concat() creates a new String object,
+String is used for Usernames, password, URL Database, File Path , Network connection.
+5. Difference between String, StringBuilder and String Buffer?
+StringBuilder is used when we need to modify or concatenate strings frequently. Since String objects are immutable. Every modification create a new object, which impact performance. StringBuilder is more efficient when we are updating the same object.
+Example : Record 1 Record 2 Record 3 Record 4
+
+StringBuffer is similar to StringBuilder, but it is synchronized and thread-safe. I would use StringBuffer when multiple thread need to modify the same string object. If thread safety is not required , I would use StringBuilder for more faster.
+
+Therefore:
+String for immutable text, StringBuilder for frequently modification in a single-thread environment, StringBuffere for frequent string modification in a multiple-thread environment where thread safety is required.
+
+
+6. What is the difference between ArrayList and LinkedList?
+ArrayList and LinkedList both implement the List interface, but their internal data structure are different.
+-	ArrayList: is backed by a dynamic array
+-	LinkedList: is Implemented as doubly linked List.
+Because of this ArrayList provides 0(1) random access using indexes whereas LinkedList requires O(n) traversal to reach a specific element.
+
+- For Insertions and deletions:
+-	In an ArrayList, inserting or removing elements in the middle typically required shifting elements, resulting in 0(n) complexity.
+-	In an LinkedList, once the node position is know, insertion and deletion are O(1) because only links need to be update.
+For Memory  perspective. LinkedList consume more memory because each node stores reference to the previous and next nodes in addition to the actual data.
+In  real-world enterprise application, I generally prefer the ArrayList because most of the use case are ready- heavy, iteration is faster due to better CPU cache locality, and overall performance is usually better than LinkedList despite the theoretical insertion advantage of LinkedList
+
+
+Interview Answer:
+Although the LinkedList offere o(1) insertion/ deletion at a know node, in practice we often spend o(n) time locating that node first. Combined with poor cache locality and higher memory overhead. ArrayList generally outperforms LinkedList in most of the business applications. That why ArrayList is usually the default choice unless there is specific requirement that benefits from a LinkedList structure.
+
+7. Difference between HashMap and ConcurrentHashMap?
+Both HashMap and ConcurrentHashMap store data as key-value pairs, but HashMap is not thread-safe whereas ConcurrentHashMap is thread-safe.
+Key Differences:
+1.	Thread safety:
+-	HashMap:
+-	 Not thread-safe
+-	Mutiple threads modifying it simultaneously can cause inconsistent data.
+
+ConcurrentHashMap:
+-	Thread-safe
+-	Support concurrent read and write operations.
+
+2.	Performance:
+HashMap: Is faster in a single-threaded environment because there is no Synchronization overhead.
+ConcurrentHashMap: is optimized for multi-threaded environments using fine-grained locking and CAS operations, allowing multiple thread to access the map concurrently.
+
+8. What is HashMap’s internal working?
+HashMap: internally uses an array of buckets. When a key values pair is inserted HashMap calculates the key’s hashcode .
+HaspMap first obtains the key’s hashCode. It then applies a hash-spreading function by XORing the hash with its unsigned right-shifted value by 16 bits. This improves bucket distribution and minimizes collisions. After that, hashMap calculates the bucket index using (Capacity -1 ) & hash, Which is more efficient than using modulo because the capacity is always a power of two.
+
+
+9. Difference between HashMap and Hashtable?
+10. What is the difference between Comparable and comparator?
+11. What is a fail-fast iterator?
+12. Difference between Checked and Unchecked exception?
+13. What is the difference between Throw and Throws?
+14. What is the finally block
+15. what is Multithreading?
+16. Difference between start() and run?
+17. What is synchronization?
+18. Difference between synchronized and ReentrantLock?
+19. What is volatile keyword?
+20. What is a deadlock?
+21. What is java 8 Lambda Experssions ?
+22. What is functional Interface?
+23. What is Stream API?
+24. Difference between map() and flatMap()?
+25. What is Optional?
+26. what are the immutable Classes?
+27. What is Serialization?
+28. What is the difference between ClassNotFoundException and NoClassDefFoundError?
+
+
+
+
+Spring Boot Questions:
+
+What is Spring transactional:
+Answer:
+@Transactional is a declarative transation management mechanism provided by Spring. It Create a transactional boundary around a method using AOP proxies. When the method is invoked through the spring proxy, Spring Starts a database transaction, executes the business logic and then either commits or rolls back the transaction depending on the outcome.
+What actually Happens behind the scenes?
+1.	Spring create a proxy around the bean.
+2.	A method annotated with @Transactional is intercepted by the proxy.
+3.	The Proxy obtains database connection from the transaction manager.
+4.	Auto-commit is disabled
+5.	All repository/JPA operations participate in the same transcation.
+6.	On Successful completion -> Commit
+7.	On Execptiom - > RollBack
+
+
+How can we do both batch processing and the real time data without duplicating or overriding the values?
+
+
